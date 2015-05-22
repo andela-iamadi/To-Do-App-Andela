@@ -1,0 +1,15 @@
+
+<ul id="todo-list" class="main_todo_list" list-style="none">
+
+	<% @projects.each do |item| %>
+		<li id="<%= item[:id] %>">
+			<div class="item left">
+				<a id="<%= item[:id] %>" href="#" class="btn btn-transparent done"  data-tooltip="Mark as done"><%= item[:done] ? "<i class=\"fa fa-check-square-o fa-2x\"></i>" : "<i class=\"fa fa-square-o fa-2x\"></i>" %></a> <%= item[:done] ? "#{item[:title]}" : item[:title]%>
+			</div>
+			<span class="right">
+				 	<a href="/project/delete/<%= item[:id]%>" class="btn btn-default" data-tooltip="View task"><i class="fa fa-view"></i>View</a>
+			 </span>
+		</li>
+	<% end %>
+</ul>
+<a href="/task/new" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Add a task</a>

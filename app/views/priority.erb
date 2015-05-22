@@ -1,0 +1,19 @@
+ <% @priority = 3 if @task_id == "" || @task_id.nil? %>
+ <% @priority_id = "priority_#{@task_id}" %>
+
+<span class="starPriority" id="<%= @task_id %>">
+	<input id="priority5_<%= @task_id %>" type="radio" name="priority_<%= @task_id %>" class="star" value="5" <%= @priority.to_i == 5 ? "CHECKED" : "UNCHECKED" %> >
+	<label for="priority5_<%= @task_id %>" title="Very important" data-label="5" class="star" >5</label>
+	
+	<input id="priority4_<%= @task_id %>" type="radio" name="priority_<%= @task_id %>" class="star" value="4" <%= @priority.to_i == 4 ? "CHECKED" : "UNCHECKED" %> >
+	<label for="priority4_<%= @task_id %>" title="Important"  data-label="4" class="star">4</label>
+	
+	<input id="priority3_<%= @task_id %>" type="radio" name="priority_<%= @task_id %>" class="star" value="3" <%= @priority.to_i == 3 ? "CHECKED" : "UNCHECKED" %> >
+	<label for="priority3_<%= @task_id %>" title="Average"  data-label="3" class="star">3</label>
+	
+	<input id="priority2_<%= @task_id %>"  type="radio" name="priority_<%= @task_id %>" class="star" value="2" <%= @priority.to_i == 2 ? "CHECKED" : "UNCHECKED" %> >
+	<label for="priority2_<%= @task_id %>" title="A bit unnecessary"  data-label="2" class="star">2</label>
+	
+	<input id="priority1_<%= @task_id %>" type="radio" name="priority_<%= @task_id %>"  class="star" value="1" <%= @priority.to_i == 1 ? "CHECKED" : "UNCHECKED" %> >
+	<label for="priority1_<%= @task_id %>"  title="Very unnecessary"  data-label="1" class="star">1</label>
+</span>

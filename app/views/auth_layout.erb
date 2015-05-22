@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title><%= @page_title %> || Dhuwit Online To Do App</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="The <%= @page_title %> page of Dhuwit: A simple but powerful to do app.">
+	    <meta name="author" content="Cent Amadi">
+
+	    <link href="/style.css" rel="stylesheet">
+	    <link src href="/css/bootstrap.css" rel="stylesheet" >
+	    <link src href="/css/bootstrap-theme.css" rel="stylesheet" >
+	    <link src href="/css/normalize.css" rel="stylesheet" >
+		<link href="/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+	    <script src="/js/jquery-1.11.3.min.js" lang="text/javascript"></script>
+		<script src="/js/bootstrap.min.js"></script>
+  	</head>
+
+  	<body>
+  		<div class="login-bg">
+  			<% if @message.to_s.strip != "" || @message != nil %>
+	  			<div class="alert alert-danger" role="alert">
+				  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				  <span class="sr-only">Error:</span>
+				  <%= @message %>
+				</div>
+			<% end %>
+	  		<div class="centered shadow-box">
+		  		<div class="row">
+		  			<div class="col-md-4 pad left">
+		  				<div style="display:block;">
+			  				<img src="/images/logo.png" width="150px" height="auto" class="left"></img><H1 style="padding-top: 50px">DOWIT</H1>
+			  			</div>
+			  			<div style="display:block;">
+		  					<h3 >Join our community of top-performers and be motivate to better manage you time</h3>
+		  				</div>
+		  			</div>
+		  			<%= yield %>
+		  		</div>
+		  	</div>
+
+	  	</div>
+
+  	</body>
+
+</html>

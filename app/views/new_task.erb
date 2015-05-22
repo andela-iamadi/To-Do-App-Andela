@@ -1,0 +1,48 @@
+
+
+<div class="well" style="max-width:500px">
+<form action="/task/new" class="form-horizontal" method="POST">
+
+	<div class="form-group">
+	<label class="sr-only" for="content">Description</label>
+	<div class="input-group">
+	    <div class="input-group-addon"><i class="fa fa-legal"></i></div>
+	    <input type="text" class="form-control" name="content" id="username" placeholder="Task you want to add to your list">
+	</div>
+	</div>
+
+	  <div class="form-group">
+	    <label class="sr-only" for="due_date">Due date</label>
+	    <input type="Date" class="form-control" name="due_date" id="due_date" placeholder="Due date">
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="due_time">Due Time</label>
+	    <input type="Time" class="form-control" name="due_time" id="due_time" placeholder="Due time">
+	  </div>
+	  <div class="checkbox">
+	    <label>
+	      <input type="checkbox" name="show_reminder" id="show_reminder" checked> Show reminder
+	    </label>
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="reminder">Reminder</label>
+	    <input type="Time" class="form-control" name="reminder" id="reminder" placeholder="Set reminder(minutes) ">
+	  </div>
+
+	<div class="form-group priority" >
+		<div>Priority: <%= erb :priority %></div>
+	  	<button type="submit" class="btn btn-primary right"><i class="fa fa-plus-square"></i>Add</button>
+	</div>
+</form>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#show_reminder").click(function(e){
+			if (document.getElementById('show_reminder').checked) {
+				$("#reminder").show();
+			} else {
+				$("#reminder").hide();
+			}
+		});
+	});
+</script>

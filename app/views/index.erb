@@ -1,0 +1,18 @@
+<ul id="todo-list" class="main_todo_list" list-style="none">
+
+	<% @tasks.each do |item| %>
+		<% @task_id = item[:id] %>
+		<% @priority = item[:priority] %>
+		<% @note_time = item[:reminder].strftime("%e %B %Y %I %M %P") %>
+		<li id="<%= item[:id] %>">
+			<div class="item left">
+				<a id="<%= item[:id] %>" href="#" class="btn btn-transparent task_done"><%= item[:done] ? "<i class=\"fa fa-check-square-o fa-2x\"></i>" : "<i class=\"fa fa-square-o fa-2x\"></i>" %></a> <%= item[:done] ? "#{item[:content]}" : item[:content]%>
+			</div>
+			<span class="right">
+				 	<%= erb :notification_time %><%= erb :priority %><a href="/task/delete/<%= item[:id]%>" class="btn btn-danger"><i class="fa fa-trash-o fa-md"></i>  Delete</a>
+			 </span>
+		</li>
+	<% end %>
+
+</ul>
+<a href="/task/new" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Add a task</a>

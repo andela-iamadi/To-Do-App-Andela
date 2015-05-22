@@ -1,0 +1,5 @@
+ <% @note_time = Time.now.strftime("%e %B %Y") if @note_time == "" || @note_time.nil? %>
+
+<span class="notification" id="note_<%= @task_id %>">
+	<i class="fa fa-bell-o"></i><%= @note_time %>
+</span>
